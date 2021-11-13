@@ -55,10 +55,15 @@ fi
 
 
 # Add the system user to the userdb
-if test -n "`tail -c 1 /etc/passwd `"; then
+if test -n "`tail -c 1 /etc/passwd`"; then
     echo "" >> /etc/passwd
 fi
 echo "$USERNAME:x:$UID:$GID:sambauser:/:/sbin/nologin" >> /etc/passwd
+
+if test -n "`tail -c 1 /etc/shadow`"; then
+    echo "" >> /etc/shadow
+fi
+echo "$USERNAME:!::0:::::" >> /etc/shadow
 
 
 # Set the SMB password

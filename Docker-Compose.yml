@@ -9,6 +9,7 @@ services:
     volumes:
       # Overlay-mount the password files
       - ./example/passwd:/etc/passwd:rw
+      - ./example/shadow:/etc/shadow:rw
       - ./example/smbpasswd:/var/lib/samba/private/smbpasswd:rw
       
       # Overlay-mount the config and share files
