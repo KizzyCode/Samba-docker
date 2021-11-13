@@ -15,3 +15,5 @@ container.
 
 ## Example
 See the [Docker-Compose.yml](Docker-Compose.yml) file as example. The login credentials are `testuser:testuser`.
+
+You can mount the filesystem using `mount -t smbfs //testuser:testuser@localhost/testuser MOUNT`
