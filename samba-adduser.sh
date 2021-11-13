@@ -34,7 +34,7 @@ fi
 # Determine UID
 UID=""
 for _UID in `seq 1000 65535`; do
-    if ! getent passwd "$_UID"; then
+    if ! getent passwd "$_UID" >/dev/null; then
         UID=$_UID
         break
     fi
@@ -55,12 +55,12 @@ fi
 
 
 # Add the system user to the userdb
-if test -n "`tail -c 1 /etc/passwd`"; then
+if test -n "`tail -c 1 /etc/passwd `"; then
     echo "" >> /etc/passwd
 fi
 echo "$USERNAME:x:$UID:$GID:sambauser:/:/sbin/nologin" >> /etc/passwd
 
 
 # Set the SMB password
-smbpasswd -a -n "$USERNAME" 2>/dev/null >/dev/null
-echo -e "$PASSWORD_1\n$PASSWORD_2" | smbpasswd "$USERNAME" 2>/dev/null >/dev/null
+smbpasswd -a -n "$USERNAME" >/dev/null
+echo -e "$PASSWORD_1\n$PASSWORD_2" | smbpasswd "$USERNAME" >/dev/null
