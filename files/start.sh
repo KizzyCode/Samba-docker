@@ -35,6 +35,7 @@ if ! getent passwd "$SMB_USER" >/dev/null; then
     echo -e "$SMB_PASS\n$SMB_PASS" | smbpasswd "$SMB_USER" >/dev/null
 
     # Create config
+    export SMB_LOGLEVEL=${SMB_LOGLEVEL:-1}
     cat /etc/samba/smb.conf.template | envsubst > /etc/samba/smb.conf
 fi
 

@@ -6,8 +6,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "445:445"
+    volumes:
+      - ./example:/var/sambashare:rw
     environment:
       SMB_USER: testuser
       SMB_PASS: testpass
-    volumes:
-      - ./example:/var/sambashare:rw
+      # Optional: 
+      SMB_LOGLEVEL: 1 passdb:5 auth:5

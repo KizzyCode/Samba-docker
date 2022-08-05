@@ -1,5 +1,5 @@
 [global]
-log level = 1
+log level = ${SMB_LOGLEVEL}
 security = user
 passdb backend = smbpasswd
 server role = standalone server
