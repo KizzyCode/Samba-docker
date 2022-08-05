@@ -5,13 +5,9 @@ services:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - 127.0.0.1:445:445
+      - "445:445"
+    environment:
+      SMB_USER: testuser
+      SMB_PASS: testpass
     volumes:
-      # Overlay-mount the password files
-      - ./example/passwd:/etc/passwd:rw
-      - ./example/shadow:/etc/shadow:rw
-      - ./example/smbpasswd:/var/lib/samba/private/smbpasswd:rw
-      
-      # Overlay-mount the config and share files
-      - ./example/smb.conf:/etc/samba/smb.conf:ro
-      - ./example/sambashare:/var/sambashare:rw
+      - ./example:/var/sambashare:rw

@@ -4,16 +4,8 @@
 # `samba`
 Welcome to `samba` 🎉
 
-`samba` is a tiny samba-server-container - nothing special here.
-
-
-## `samba-adduser`
-To provide an easy way to add users, there is an additional `samba-adduser`-helper script. This script edit
-`/etc/passwd` directly, so it's possible to use an external persistent `passwd`-file and overlay-mount it into the
-container.
+`samba` is a tiny, single-user samba-server-container - nothing special here.
 
 
 ## Example
-See the [Docker-Compose.yml](Docker-Compose.yml) file as example. The login credentials are `testuser:testuser`.
-
-You can mount the filesystem using `mount -t smbfs //testuser:testuser@localhost/testuser MOUNT`
+See the [Docker-Compose.yml](Docker-Compose.yml) file as example.

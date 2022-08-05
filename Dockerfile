@@ -1,8 +1,9 @@
 FROM alpine:latest
 
 RUN apk add --no-cache supervisor samba
-COPY ./samba-adduser.sh /usr/bin/samba-adduser
-COPY ./supervisord.conf /etc/samba/supervisord.conf
+COPY ./files/smb.conf /etc/samba/smb.conf
+COPY ./files/supervisord.conf /etc/samba/supervisord.conf
+COPY ./files/start.sh /usr/libexec/start.sh
 
 USER root
-CMD [ "supervisord", "-c", "/etc/samba/supervisord.conf" ]
+CMD [ "/usr/libexec/start.sh" ]
