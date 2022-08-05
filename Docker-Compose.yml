@@ -5,7 +5,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - "445:445"
+      - "1445:445"
     volumes:
       - ./example:/var/sambashare:rw
     environment:
