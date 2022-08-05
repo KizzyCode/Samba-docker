@@ -33,6 +33,9 @@ if ! getent passwd "$SMB_USER" >/dev/null; then
     fi
     smbpasswd -a -n "$SMB_USER" >/dev/null
     echo -e "$SMB_PASS\n$SMB_PASS" | smbpasswd "$SMB_USER" >/dev/null
+
+    # Create config
+    cat /etc/samba/smb.conf.template | envsubst > /etc/samba/smb.conf
 fi
 
 # Start supervisor

@@ -38,9 +38,7 @@ fruit:posix_rename = yes
 fruit:wipe_intentionally_left_blank_rfork = yes
 fruit:delete_empty_adfiles = yes
 
-[testuser]
-comment = Test User
+[${SMB_USER}]
 path = /var/sambashare
-valid users = testuser
-fruit:time machine max size = 100MB
+valid users = ${SMB_USER}
 fruit:time machine = yes
