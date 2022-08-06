@@ -37,6 +37,7 @@ fruit:veto_appledouble = no
 fruit:posix_rename = yes
 fruit:wipe_intentionally_left_blank_rfork = yes
 fruit:delete_empty_adfiles = yes
+fruit:advertise_fullsync = yes
 
 [${SMB_USER}]
 path = /var/sambashare
