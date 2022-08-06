@@ -5,6 +5,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     ports:
+      # Use a high port to avoid conflicts with a locally running SMB server
       - "1445:445"
     volumes:
       - ./example:/var/sambashare:rw
@@ -12,4 +13,4 @@ services:
       SMB_USER: testuser
       SMB_PASS: testpass
       # Optional: 
-      SMB_LOGLEVEL: 1 passdb:5 auth:5
+      # SMB_LOGLEVEL: 1
