@@ -2,8 +2,6 @@
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # `samba`
-⚠️ Currently archived in favor of [AFP](https://github.com/KizzyCode/Afp-docker) ⚠️
-
 Welcome to `samba` 🎉
 
 `samba` is a tiny, single-user samba-server-container - nothing special here.

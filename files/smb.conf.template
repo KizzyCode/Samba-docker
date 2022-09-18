@@ -42,4 +42,4 @@ fruit:advertise_fullsync = yes
 [${SMB_USER}]
 path = /var/sambashare
 valid users = ${SMB_USER}
-fruit:time machine = yes
+fruit:time machine = ${TIME_MACHINE}

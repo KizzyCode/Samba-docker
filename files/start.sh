@@ -9,6 +9,7 @@ if ! getent passwd "$SMB_USER" >/dev/null; then
 
     # Create config
     export SMB_LOGLEVEL=${SMB_LOGLEVEL:-1}
+    export TIME_MACHINE=${TIME_MACHINE:-no}
     cat /etc/samba/smb.conf.template | envsubst > /etc/samba/smb.conf
 
     # Set the SMB password
